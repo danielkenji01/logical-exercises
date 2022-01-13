@@ -1,0 +1,1 @@
+select OrderId, TotalPrice from orders where CustomerName = 'DeathStar';
