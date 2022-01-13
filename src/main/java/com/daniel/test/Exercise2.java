@@ -14,33 +14,33 @@ public class Exercise2 {
     public static void main(String[] args) {
         String[] result = new String[]{"***", "---", "**-", "-*-"};
 
-        System.out.println(calcularTotalEstrelas(result));
+        System.out.println(calculateTotalStars(result));
     }
 
-    private static int calcularTotalEstrelas(String[] result) {
-        int totalEstrelas = 0;
+    static int calculateTotalStars(String[] result) {
+        int totalStars = 0;
 
         for (String res : result) {
-            totalEstrelas += calcularTotalEstrelas(res);
+            totalStars += calculateTotalStars(res);
         }
 
-        return totalEstrelas;
+        return totalStars;
     }
 
-    private static int calcularTotalEstrelas(String res) {
+    private static int calculateTotalStars(String res) {
         if (res == null) {
             return 0;
         }
 
-        int totalEstrelas = 0;
+        int totalStars = 0;
 
         for (char c : res.toCharArray()) {
             if (c == '*') {
-                totalEstrelas++;
+                totalStars++;
             }
         }
 
-        return totalEstrelas;
+        return totalStars;
     }
 
 }
