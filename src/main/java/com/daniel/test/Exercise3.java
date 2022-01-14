@@ -16,7 +16,7 @@ public class Exercise3 {
         System.out.println(checkMoments(moments));
     }
 
-    private static int checkMoments(String[] moments) {
+    static int checkMoments(String[] moments) {
 
         int totalMoments = 0;
 

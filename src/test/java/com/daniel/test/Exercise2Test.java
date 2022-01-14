@@ -24,7 +24,7 @@ class Exercise2Test {
     }
 
     @Test
-    void test_three_stars() {
+    void test_three_stars_in_different_places() {
         String[] result = new String[]{"-*-", "*--", "--*"};
 
         int totalStars = Exercise2.calculateTotalStars(result);
