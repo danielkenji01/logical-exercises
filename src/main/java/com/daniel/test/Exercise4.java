@@ -22,7 +22,7 @@ public class Exercise4 {
         }
     }
 
-    private static int[][] returnChampion(int[] wins, int[] ties) {
+    static int[][] returnChampion(int[] wins, int[] ties) {
         int[] totalPoints = initializeArrayPoints(wins.length);
 
         calculatePoints(wins, totalPoints, 3);
@@ -47,13 +47,13 @@ public class Exercise4 {
         return new int[][]{{indexChampion, pointsChampion}};
     }
 
-    private static void calculatePoints(int[] results, int[] totalPoints, int points) {
+    static void calculatePoints(int[] results, int[] totalPoints, int points) {
         for (int i = 0; i < results.length; i++) {
             totalPoints[i] += results[i] * points;
         }
     }
 
-    private static int[] initializeArrayPoints(int size) {
+    static int[] initializeArrayPoints(int size) {
         int[] totalPoints = new int[size];
 
         for (int i = 0; i < size; i++) {
