@@ -23,18 +23,16 @@ public class Exercise3 {
         for (String moment : moments) {
             moment = moment.replace(":", "");
 
-            char zero = moment.charAt(0);
-            char um = moment.charAt(1);
-            char dois = moment.charAt(2);
-            char tres = moment.charAt(3);
+            char firstChar = moment.charAt(0);
+            char secondChar = moment.charAt(1);
+            char thirdChar = moment.charAt(2);
+            char fourthChar = moment.charAt(3);
 
-            if (zero == um && um == dois && dois == tres) {
+            if (firstChar == secondChar && thirdChar == fourthChar) {
                 totalMoments++;
-            } else if (zero == um && dois == tres) {
+            } else if (firstChar == thirdChar && secondChar == fourthChar) {
                 totalMoments++;
-            } else if (zero == dois && um == tres) {
-                totalMoments++;
-            } else if (zero == tres && um == dois) {
+            } else if (firstChar == fourthChar && secondChar == thirdChar) {
                 totalMoments++;
             }
         }
