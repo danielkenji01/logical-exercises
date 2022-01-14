@@ -9,20 +9,29 @@ public class Exercise1 {
 
     public static void main(String[] args) {
         for (int i = 1; i <= 100; i++) {
+            String message = generateMessageFromMultiples(i);
 
-            boolean multiploDe3 = i % 3 == 0;
-            boolean multiploDe5 = i % 5 == 0;
-
-            if (multiploDe3 && multiploDe5) {
-                System.out.println("FizzBuzz");
-            } else if (multiploDe3) {
-                System.out.println("Fizz");
-            } else if (multiploDe5) {
-                System.out.println("Buzz");
-            } else {
-                System.out.println(i);
-            }
+            System.out.println(message);
         }
+    }
+
+    static String generateMessageFromMultiples(int number) {
+        boolean multipleOfThree = number % 3 == 0;
+        boolean multipleOfFive = number % 5 == 0;
+
+        StringBuilder builder = new StringBuilder();
+
+        if (multipleOfThree) {
+            builder.append("Fizz");
+        }
+
+        if (multipleOfFive) {
+            builder.append("Buzz");
+        }
+
+        String message = builder.toString();
+
+        return builder.length() > 0 ? message : String.valueOf(number);
     }
 
 }
