@@ -9,14 +9,20 @@ package com.daniel.test;
  */
 public class Exercise4 {
 
+    private static final String FINAL_MESSAGE = "The champion is the team %s with %s points.";
+
     public static void main(String[] args) {
         int[] wins = new int[]{1, 2, 1, 3};
         int[] ties = new int[]{2, 2, 4, 1};
 
-        System.out.println(defineChampion(wins, ties));
+        int[][] matrixChampion = returnChampion(wins, ties);
+
+        for (int[] ints : matrixChampion) {
+            System.out.println(String.format(FINAL_MESSAGE, ints[0], ints[1]));
+        }
     }
 
-    private static String defineChampion(int[] wins, int[] ties) {
+    private static int[][] returnChampion(int[] wins, int[] ties) {
         int[] totalPoints = initializeArrayPoints(wins.length);
 
         calculatePoints(wins, totalPoints, 3);
@@ -38,7 +44,7 @@ public class Exercise4 {
             }
         }
 
-        return "The champion is the team " + indexChampion + " with " + pointsChampion + " points.";
+        return new int[][]{{indexChampion, pointsChampion}};
     }
 
     private static void calculatePoints(int[] results, int[] totalPoints, int points) {
